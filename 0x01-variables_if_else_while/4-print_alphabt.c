@@ -1,14 +1,10 @@
 #include <stdio.h>
 
 /**
+ * main - Prints some letters of alphabet
  *
- *  * main - Prints some letters of alphabet
- *
- *   *
- *
- *    * Return: Always (Success)
- *
- *     **/
+ * Return: Always (Success)
+ **/
 
 int main(void)
 {
@@ -21,7 +17,8 @@ int main(void)
 			putchar(c);
 		}
 	}
-	put char('\n');
+
+	putchar('\n');
 
 	return (0);
 }
