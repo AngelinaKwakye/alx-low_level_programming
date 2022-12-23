@@ -3,7 +3,8 @@
 /**
  * _strcat - concatenates two strings
  * @dest: copy to
- * @src: copy from
+ * @src: copy to add
+ *
  * Return: pointr to dest
  */
 char *_strcat(char *dest, char *src)
