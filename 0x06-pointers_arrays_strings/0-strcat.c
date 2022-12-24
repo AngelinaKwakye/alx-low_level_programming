@@ -3,8 +3,7 @@
 /**
  * _strcat - concatenates two strings
  * @dest: copy to
- * @src: copy to add
- *
+ * @src: copy to add *
  * Return: pointr to dest
  */
 char *_strcat(char *dest, char *src)
@@ -26,3 +25,4 @@ char *_strcat(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
+}
