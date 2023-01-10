@@ -1,43 +1,52 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * alloc_grid - returns a pointer to a 2-dimensioanl array of intergers
- * @width: width of the grid
- * @height: height of the grid
- * Return: NULL on failure if width or height is 0 || -1 return NULL
+ * _strlen - Swaps integers wih pointers.
+ *
+ * @s: is a pointer to a char
+ *
+ * Return: Always 0.
  */
-int **alloc_grid(int width, int height)
+int _strlen(char *s)
 {
-int a, b, c;
-int **p;
-if (width < 1 || height < 1)
+int i = 0;
+while (*(s + i) != '\0')
+i++;
+return (i);
+}
+/**
+ * str_concat - Concatenates 2 strings..
+ *
+ * @s1: First string.
+ * @s2: Second string.
+ *
+ * Return: Returns the created array.
+ **/
+char *str_concat(char *s1, char *s2)
+{
+int i, j, size1, size2, totSize;
+char *ar;
+if (s1 == NULL)
+s1 = "";
+if (s2 == NULL)
+s2 = "";
+size1 = _strlen(s1);
+size2 = _strlen(s2);
+totSize = (size1 + size2)+1;
+ar = malloc(totSize *sizeof(char));
+if (ar == NULL)
 return (NULL);
-p = malloc(sizeof(int *) * height);
-if (p == NULL)
+else
 {
-free(p);
-return (NULL);
-}
-for (a = 0; a < height; a++)
+for (i = 0; i < size1; i++)
+ar[i] = s1[i];
+for (j = 0; j < size2; j++)
 {
-p[a] = malloc(sizeof(int) * width);
-if (p[a] == NULL)
-{
-for (; a >= 0 ; a--)
-{
-free(p[a]);
+ar[i] = s2[j];
+i++;
 }
-free(p);
-return (NULL);
+ar[i + 1] = '\0';
+return (ar);
 }
-}
-for (b = 0; b < height; b++)
-{
-for (c = 0; c < width; c++)
-{
-p[b][c] = 0;
-}
-}
-return (p);
 }
