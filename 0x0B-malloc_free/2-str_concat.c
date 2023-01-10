@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
  * alloc_grid - returns a pointer to a 2-dimensioanl array of intergers
  * @width: width of the grid
@@ -29,6 +30,13 @@ free(p[a]);
 }
 free(p);
 return (NULL);
+}
+}
+for (b = 0; b < height; b++)
+{
+for (c = 0; c < width; c++)
+{
+p[b][c] = 0;
 }
 }
 return (p);
