@@ -26,6 +26,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	new_ptr = malloc(new_size); /*Reserve new memory using malloc*/
 	if (new_ptr == NULL) /*Verify that malloc did not fail*/
 		return (NULL);
+	old_ptr = ptr; /*Cast malloc pointer to char type by reassignment*/
+
 	if (new_size < old_size) /*Bytes from previous buffer to new buffer*/
 	{
 		for (i = 0; i < new_size; i++)
