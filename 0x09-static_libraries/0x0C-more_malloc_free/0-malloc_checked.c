@@ -7,11 +7,19 @@
  * if malloc fails, status value is equal to 98
  */
 
-void *malloc_checked(unsigned int b)
+void *malloc_checked(unsigned int x)
 {
-		char *p;
-			p = malloc(b);
-			if (p == NULL)
-				exit(98);
-			return (p);
+	/*declare a pointer to be used*/
+	int *ptr;
+
+	/*reserve memory spaces in heap*/
+	ptr = malloc(x);
+
+	/*if malloc doesn't fails*/
+	if (ptr == NULL)
+	{
+		free(ptr);
+		exit(98); /*Terminate process with 98 as return value*/
+	}
+	return (ptr);
 }
